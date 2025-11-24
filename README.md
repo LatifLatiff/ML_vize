@@ -119,7 +119,7 @@ Bu proje bir Jupyter Notebook içerir ve çalıştırma yöntemi aşağıda veri
 1. Depodaki `.ipynb` dosyasını açın.
 2. Sağ üstteki **Open in Colab** butonuna tıklayın.  
    (Buton görünmüyorsa https://colab.research.google.com adresinden notebooku manuel yükleyebilirsiniz.)
-3. Notebook'daki ilgili alana ML vize klasörünün içinde bulunan data kalsörünün içindeki data dosyasını alın ve dosyanın yolunu yapıştırın.
+3. Notebook'daki ilgili alana ML vize klasörünün içinde bulunan data klasörünün içindeki data dosyasını alın ve dosyanın yolunu yapıştırın.
 4. Son olarak notebook'da hücreleri sırasıyla çalıştırın.
 
 
