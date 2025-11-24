@@ -1,5 +1,5 @@
 [README.md](https://github.com/user-attachments/files/23728340/README.md)
-# 📘 Student Performance – Overall Score Prediction
+#  Student Performance – Overall Score Prediction
 
 Bu proje, 25.000 öğrencinin demografik, akademik ve sosyal özelliklerinden yararlanarak **overall_score** değerinin tahmin edilmesini amaçlayan bir makine öğrenmesi çalışmasıdır. Proje boyunca veri analizi, veri ön işleme, model eğitimi ve model karşılaştırması gibi temel ML adımları uygulanmıştır.
 
@@ -108,13 +108,13 @@ Linear Regression güçlü bir baseline sunarken, KNN modeli bu veri setinde dü
 - Elde edilen R² değeri (~0.94), bağımsız değişkenlerin hedef değişkeni güçlü bir şekilde açıkladığını göstermektedir.
 
 ---
-## 🚀 Projeyi Çalıştırma
+##  Projeyi Çalıştırma
 
 Bu proje bir Jupyter Notebook içerir ve çalıştırma yöntemi aşağıda verilmiştir.
 
 ---
 
-### 🟨 1. Google Colab'da Çalıştırma 
+###   Google Colab'da Çalıştırma 
 
 1. Depodaki `.ipynb` dosyasını açın.
 2. Sağ üstteki **Open in Colab** butonuna tıklayın.  
