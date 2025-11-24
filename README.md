@@ -102,10 +102,24 @@ Linear Regression güçlü bir baseline sunarken, KNN modeli bu veri setinde dü
 ##  Genel Değerlendirme
 
 - Öğrenci başarısı; çalışma süresi, devamsızlık oranı, aile eğitim düzeyi ve çalışma yöntemi gibi değişkenlerden önemli ölçüde etkilenmektedir.  
-- Veri ön işleme adımları, özellikle leakage engelleme ve encoding, model performansını ciddi ölçüde iyileştirmiştir.  
+- Veri ön işleme adımları, özellikle leakage engelleme ve encoding, model performansını ciddi ölçüde iyileştirmiştir.
+
 - Random Forest, tahmin performansı açısından bu veri seti için en uygun model olmuştur.  
 - Elde edilen R² değeri (~0.94), bağımsız değişkenlerin hedef değişkeni güçlü bir şekilde açıkladığını göstermektedir.
 
 ---
+## 🚀 Projeyi Çalıştırma
+
+Bu proje bir Jupyter Notebook içerir ve çalıştırma yöntemi aşağıda verilmiştir.
+
+---
+
+### 🟨 1. Google Colab'da Çalıştırma 
+
+1. Depodaki `.ipynb` dosyasını açın.
+2. Sağ üstteki **Open in Colab** butonuna tıklayın.  
+   (Buton görünmüyorsa https://colab.research.google.com adresinden notebooku manuel yükleyebilirsiniz.)
+3. Notebook'daki ilgili alana ML vize klasörünün içinde bulunan data kalsörünün içindeki data dosyasını alın ve dosyanın yolunu yapıştırın.
+4. Son olarak notebook'da hücreleri sırasıyla çalıştırın.
 
 
