@@ -122,4 +122,39 @@ Bu proje bir Jupyter Notebook içerir ve çalıştırma yöntemi aşağıda veri
 3. Notebook'daki ilgili alana ML vize klasörünün içinde bulunan data klasörünün içindeki data dosyasını alın ve dosyanın yolunu yapıştırın.
 4. Son olarak notebook'da hücreleri sırasıyla çalıştırın.
 
+## 🖼️ Örnek Çıktılar
+
+Aşağıda model eğitimi sırasında elde edilen bazı örnek grafikler  yer almaktadır.  
+
+
+---
+
+###  1. Sayısa Değişken Dağılımı 
+
+![](figures/sayisal_d.png)
+
+---
+---
+
+###  2. Kategorik Değişken Dağılımı 
+
+![](figures/kategorik_d.png)
+
+---
+
+###  3. Korelasyon Matrisi
+
+Bu grafik, değişkenler arasındaki ilişkiyi görselleştirir.
+
+![](figures/korelasyon.png)
+
+---
+
+
+
+
+
+
+Bu görseller, projenin analiz sürecini ve model performansını daha iyi anlamaya yardımcı olur.
+
 
