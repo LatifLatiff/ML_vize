@@ -133,7 +133,7 @@ Aşağıda model eğitimi sırasında elde edilen bazı örnek grafikler  yer al
 
 ![](figures/sayisal_d.png)
 
----
+
 ---
 
 ###  2. Kategorik Değişken Dağılımı 
