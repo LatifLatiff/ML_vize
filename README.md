@@ -134,7 +134,11 @@ EDA kapsamında:
 - Dağılım incelemeleri  
 
 ![](figures/sayisal_d.png)
+
+---
 ![](figures/kategorik_d.png)
+
+---
 ![](figures/korelasyon.png)
 
 **Neden yapıldı?**
