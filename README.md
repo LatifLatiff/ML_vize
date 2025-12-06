@@ -98,6 +98,115 @@ gibi sebeplerle açıklanabilir.
 Linear Regression güçlü bir baseline sunarken, KNN modeli bu veri setinde düşük performans göstermiştir.
 
 ---
+##  Yapılan İşlemler ve Neden Yapıldıkları
+
+Bu bölümde projede uygulanan her adımın **neden gerekli olduğu** detaylı şekilde açıklanmıştır. Böylece makine öğrenmesi sürecinin hem teknik hem de teorik arka planı anlaşılabilir hale gelmektedir.
+
+---
+
+###  1. Gereksiz ve Sızıntı (Leakage) Oluşturan Değişkenlerin Çıkarılması
+
+Modelden çıkarılan değişkenler:
+- `math_score`
+- `science_score`
+- `english_score`
+- `final_grade`
+- `student_id`
+
+**Neden yapıldı?**
+
+- `math_score`, `science_score` ve `english_score` doğrudan `overall_score` değerinin bileşenleridir. Bu değişkenler modele dahil edilirse model hedefi *gerçek anlamda tahmin etmez*, sadece hesaplar.  
+  → Bu duruma **data leakage** denir ve yapay şekilde %100'e yakın doğruluk oluşturur.  
+- `final_grade` değişkeni de `overall_score` ile yüksek oranda örtüşmektedir; bu da leakage riskini artırır.  
+- `student_id` rastgele atanmış bir kimlik bilgisidir ve öğrenci başarısı hakkında hiçbir bilgi taşımaz.  
+  → Bu tür anlamsız değişkenler modeli “gürültü” ile doldurur.
+
+Bu nedenle modele sadece gerçekten tahmin gücü olan açıklayıcı değişkenler bırakılmıştır.
+
+---
+
+###  2. Keşifsel Veri Analizi (EDA)
+
+EDA kapsamında:
+- Histogramlar  
+- Bar grafikleri  
+- Korelasyon matrisi  
+- Dağılım incelemeleri  
+
+**Neden yapıldı?**
+
+- Verinin dağılımlarının anlaşılması, outlier olup olmadığını görmemizi sağlar.  
+- Kategorik değişkenlerin dengesiz olup olmadığı (ör. gender dağılımı) model performansını doğrudan etkiler.  
+- Korelasyon matrisi, hangi değişkenlerin hedefle ilişkili olduğunu görmemizi sağlar.  
+  → Örneğin study_hours ve attendance’ın yüksek korelasyona sahip olması, bunların modele mutlaka dahil edilmesi gerektiğini gösterir.  
+- Bu adım veri setini “tanıma” aşamasıdır; doğru model kurmanın temelidir.
+
+---
+
+###  3. One-Hot Encoding Uygulanması
+
+Kategorik değişkenler şu şekilde encode edildi:
+- `gender`
+- `school_type`
+- `parent_education`
+- `internet_access`
+- `travel_time`
+- `extra_activities`
+- `study_method`
+
+**Neden yapıldı?**
+
+Makine öğrenmesi modelleri doğrudan metin verisiyle çalışamaz.  
+Örneğin: school_type = "Public" → Model bunu yorumlayamaz.
+
+Bu tür kategoriler **0/1 şeklinde** sayısal hale getirilir.
+
+One-Hot Encoding:
+- Kategoriler arasında yanlışlıkla sayısal bir ilişki kurulmasını engeller.  
+- Her kategorinin modele ayrı bilgi olarak verilmesini sağlar.  
+
+Bu işlem olmadan model çalışmaz veya hatalı çalışır.
+
+---
+
+###  4. Ölçekleme (StandardScaler)
+
+Sayısal değişkenler:
+- age
+- study_hours
+- attendance_percentage
+
+**Neden yapıldı?**
+
+Bazı modeller (özellikle KNN ve Linear Regression), farklı ölçeklerdeki değişkenlerden çok etkilenir.  
+
+Örneğin:
+- attendance_percentage → 0–100  
+- age → 10–25  
+- study_hours → 0–10  
+
+Bu aralık farkları modeli yanıltır.
+
+StandardScaler sayesinde:
+- Ortalaması 0
+- Standart sapması 1
+
+olan düzgün bir veri dağılımı elde edilir.
+
+Bu da model performansını artırır ve kararlı hale getirir.
+
+---
+
+###  5. Train/Test Split (%80 / %20)
+
+**Neden yapıldı?**
+
+- Modelin eğitildiği veri ile test edildiği veri *farklı olmalıdır*.  
+- Aynı veri üzerinde test yapılırsa modelin gerçek performansı ölçülemez.  
+- %80 eğitim, %20 test oranı ML projeleri için ideal bir dengedir.
+
+---
+
 
 ##  Genel Değerlendirme
 
@@ -122,7 +231,7 @@ Bu proje bir Jupyter Notebook içerir ve çalıştırma yöntemi aşağıda veri
 3. Notebook'daki ilgili alana ML vize klasörünün içinde bulunan data klasörünün içindeki data dosyasını alın ve dosyanın yolunu yapıştırın.
 4. Son olarak notebook'da hücreleri sırasıyla çalıştırın.
 
-## 🖼️ Örnek Çıktılar
+##  Örnek Çıktılar
 
 Aşağıda model eğitimi sırasında elde edilen bazı örnek grafikler  yer almaktadır.  
 
